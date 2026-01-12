@@ -1,16 +1,16 @@
 import { Shield } from 'lucide-react';
 
-export function Privacy() {
+export default function Privacy() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-16">
+      <section className="bg-gradient-to-r from-red-700 to-red-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-4 mb-4">
             <Shield className="w-12 h-12" />
             <h1 className="text-4xl md:text-5xl font-bold">Политика конфиденциальности</h1>
           </div>
-          <p className="text-xl text-blue-100">
+          <p className="text-xl text-red-100">
             Последнее обновление: {new Date().toLocaleDateString('ru-RU')}
           </p>
         </div>
@@ -23,7 +23,7 @@ export function Privacy() {
             <div className="prose prose-gray max-w-none">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Общие положения</h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Настоящая Политика конфиденциальности персональной информации (далее — Политика) действует в отношении всей информации, которую интернет-магазин "АвтоЗапчасти" (далее — Магазин) может получить о Пользователе во время использования сайта магазина.
+                Настоящая Политика конфиденциальности персональной информации (далее — Политика) действует в отношении всей информации, которую интернет-магазин "RedLorry" (далее — Магазин) может получить о Пользователе во время использования сайта магазина.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">2. Определение терминов</h2>
@@ -101,13 +101,13 @@ export function Privacy() {
 
               <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">9. Заключительные положения</h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Администрации сайта с помощью электронной почты info@avtozapchasti.ru.
+                Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Администрации сайта с помощью электронной почты redlorry002@gmail.com
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 В данном документе будут отражены любые изменения политики обработки персональных данных Администрацией сайта. Политика действует бессрочно до замены ее новой версией.
               </p>
 
-              <div className="bg-blue-50 border-l-4 border-blue-600 p-6 mt-8">
+              <div className="bg-red-50 border-l-4 border-red-600 p-6 mt-8">
                 <p className="text-sm text-gray-700">
                   <strong>Важно:</strong> Используя сайт, вы даете согласие на обработку своих персональных данных в соответствии с настоящей Политикой конфиденциальности.
                 </p>

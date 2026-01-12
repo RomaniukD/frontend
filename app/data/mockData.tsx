@@ -101,7 +101,7 @@ export const products: Product[] = [
     price: 3200,
     image:
       "https://images.unsplash.com/photo-1683811199384-60b7020f9bad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBicmFrZSUyMHBhZHN8ZW58MXx8fHwxNzY3OTU5MDE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    category: "Тормозная система",
+    category: "Легковые автомобили",
     brand: "Brembo",
     inStock: true,
   },
@@ -111,7 +111,7 @@ export const products: Product[] = [
     price: 5800,
     image:
       "https://images.unsplash.com/photo-1597766325363-f5576d851d6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBiYXR0ZXJ5fGVufDF8fHx8MTc2Nzk1MTIwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    category: "Аккумуляторы",
+    category: "Легковые автомобили",
     brand: "Bosch",
     inStock: true,
   },

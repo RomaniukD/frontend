@@ -50,9 +50,9 @@ export function Header() {
               <input
                 type="text"
                 placeholder="Поиск по артикулу или названию..."
-                className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
               />
-              <button className="absolute right-0 top-0 h-full px-4 bg-red-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors">
+              <button className="absolute right-0 top-0 h-full px-4 bg-red-600 text-white rounded-r-lg hover:bg-red-700 transition-colors">
                 <Search className="w-5 h-5" />
               </button>
             </div>
@@ -60,10 +60,12 @@ export function Header() {
 
           <div className="flex items-center gap-4">
             <button className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <Link href="/cart">
               <ShoppingCart className="w-6 h-6 text-gray-700" />
-              <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 0
               </span>
+              </Link>
             </button>
 
             <button
@@ -87,8 +89,8 @@ export function Header() {
               href={link.path}
               className={`text-base font-medium transition-colors pb-1 border-b-2 ${
                 isActive(link.path)
-                  ? 'text-blue-600 border-blue-600'
-                  : 'text-gray-600 border-transparent hover:text-blue-600'
+                  ? 'text-red-600 border-red-600'
+                  : 'text-gray-600 border-transparent hover:text-red-600'
               }`}
             >
               {link.label}
@@ -102,9 +104,9 @@ export function Header() {
             <input
               type="text"
               placeholder="Поиск..."
-              className="w-full px-4 py-2 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
             />
-            <button className="absolute right-0 top-0 h-full px-4 bg-blue-600 text-white rounded-r-lg">
+            <button className="absolute right-0 top-0 h-full px-4 bg-red-600 text-white rounded-r-lg">
               <Search className="w-5 h-5" />
             </button>
           </div>
@@ -121,7 +123,7 @@ export function Header() {
                 href={link.path}
                 onClick={() => setIsMenuOpen(false)}
                 className={`text-base font-medium transition-colors ${
-                  isActive(link.path) ? 'text-blue-600' : 'text-gray-600'
+                  isActive(link.path) ? 'text-red-600' : 'text-gray-600'
                 }`}
               >
                 {link.label}

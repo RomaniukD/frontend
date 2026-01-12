@@ -39,7 +39,7 @@ export function FilterSidebar({
             type="checkbox"
             checked={inStockOnly}
             onChange={(e) => onInStockChange(e.target.checked)}
-            className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+            className="w-4 h-4 text-red-600 rounded focus:ring-red-500"
           />
           <span className="text-sm text-gray-700">Только в наличии</span>
         </label>
@@ -64,10 +64,11 @@ export function FilterSidebar({
             {categories.map((category) => (
               <label key={category.id} className="flex items-center gap-2 cursor-pointer">
                 <input
-                  type="checkbox"
+                  type="radio"
+                  name='brand'
                   checked={selectedCategories.includes(category.name)}
                   onChange={() => onCategoryChange(category.name)}
-                  className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-red-600 rounded focus:ring-red-500"
                 />
                 <span className="text-sm text-gray-700">{category.name}</span>
                 <span className="text-xs text-gray-400 ml-auto">({category.count})</span>
@@ -99,7 +100,7 @@ export function FilterSidebar({
                   type="checkbox"
                   checked={selectedBrands.includes(brand)}
                   onChange={() => onBrandChange(brand)}
-                  className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-red-600 rounded focus:ring-red-500"
                 />
                 <span className="text-sm text-gray-700">{brand}</span>
               </label>
@@ -132,7 +133,7 @@ export function FilterSidebar({
                 onChange={(e) =>
                   onPriceChange({ ...priceRange, min: Number(e.target.value) })
                 }
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
               />
               <span className="text-gray-500">-</span>
               <input
@@ -142,7 +143,7 @@ export function FilterSidebar({
                 onChange={(e) =>
                   onPriceChange({ ...priceRange, max: Number(e.target.value) })
                 }
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
           </div>
