@@ -191,7 +191,7 @@ export default function Cart() {
               </Link>
 
               <div className="mt-6 pt-6 border-t border-gray-200 space-y-3 text-sm text-gray-600">
-                <p>✓ Бесплатная доставка по Москве</p>
+                <p>✓ Бесплатная доставка по Киеву</p>
                 <p>✓ Гарантия на все товары</p>
                 <p>✓ Возможность оплаты при получении</p>
               </div>

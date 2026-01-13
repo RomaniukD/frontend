@@ -71,7 +71,7 @@ export default function Home() {
                 <Truck className="w-8 h-8 text-red-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Быстрая доставка</h3>
-              <p className="text-sm text-gray-600">Доставка по Москве в день заказа</p>
+              <p className="text-sm text-gray-600">Доставка по Киеву в день заказа</p>
             </div>
 
             <div className="flex flex-col items-center text-center">

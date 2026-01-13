@@ -1,18 +1,18 @@
 "use client";
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useParams } from 'next/navigation';
 import {
   ArrowLeft,
   ShoppingCart,
   Package,
   Truck,
   Shield,
-  ChevronRight,
   Minus,
   Plus,
 } from "lucide-react";
 import { productDetails } from "../../data/catalogData";
 import { useCart } from "../../context/cart-context";
 import { useState } from "react";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default function ProductDetail() {
@@ -23,7 +23,7 @@ export default function ProductDetail() {
   const product = productDetails.find((p) => p.id === productId);
 
   if (!product) {
-    redirect("/catalog");
+    return <></>
   }
 
   const handleAddToCart = () => {
@@ -46,7 +46,7 @@ export default function ProductDetail() {
         <div className="container mx-auto px-4 py-4">
           <button
             onClick={() => window.history.back()}
-            className="inline-flex items-center text-blue-600 hover:text-blue-700"
+            className="inline-flex items-center text-red-600 hover:text-red-700"
           >
             <ArrowLeft className="w-4 h-4 mr-1" />
             Назад
@@ -152,7 +152,7 @@ export default function ProductDetail() {
                 <button
                   onClick={handleAddToCart}
                   disabled={!product.inStock}
-                  className="flex-1 bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="flex-1 bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   <ShoppingCart className="w-5 h-5" />
                   Добавить в корзину
@@ -162,18 +162,18 @@ export default function ProductDetail() {
               {/* Features */}
               <div className="border-t border-gray-200 pt-6 space-y-4">
                 <div className="flex items-start gap-3">
-                  <Truck className="w-5 h-5 text-blue-600 mt-0.5" />
+                  <Truck className="w-5 h-5 text-red-600 mt-0.5" />
                   <div>
                     <div className="font-medium text-gray-900">
                       Быстрая доставка
                     </div>
                     <div className="text-sm text-gray-600">
-                      Доставка по Москве в день заказа
+                      Доставка по Киеву в день заказа
                     </div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Shield className="w-5 h-5 text-blue-600 mt-0.5" />
+                  <Shield className="w-5 h-5 text-red-600 mt-0.5" />
                   <div>
                     <div className="font-medium text-gray-900">
                       Гарантия качества
@@ -184,7 +184,7 @@ export default function ProductDetail() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Package className="w-5 h-5 text-blue-600 mt-0.5" />
+                  <Package className="w-5 h-5 text-red-600 mt-0.5" />
                   <div>
                     <div className="font-medium text-gray-900">
                       Оригинальная упаковка
@@ -248,7 +248,7 @@ export default function ProductDetail() {
               {relatedProducts.map((relProduct) => (
                 <Link
                   key={relProduct.id}
-                  to={`/product/${relProduct.id}`}
+                  href={`/product/${relProduct.id}`}
                   className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
                 >
                   <div className="relative h-48 overflow-hidden bg-gray-100">

@@ -15,6 +15,7 @@ import {
   vehicleModels,
   parts,
   subParts,
+  productDetails,
 } from "../../../../data/catalogData";
 import DetailsPath from "@/app/components/detailsPath";
 import { useState } from "react";
@@ -27,6 +28,10 @@ export default function Parts() {
   }>();
 
   const [expandedParts, setExpandedParts] = useState<Set<string>>(new Set());
+  const [expandedSubParts, setExpandedSubParts] = useState<Set<string>>(
+    new Set()
+  );
+
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState<"catalog" | "illustrations">(
     "catalog"
@@ -43,10 +48,11 @@ export default function Parts() {
   const breadcrumbs = [
     { label: category?.name, href: `/catalog/${category?.id}` },
     { label: brand?.name, href: `/catalog/${category?.id}/${brand?.id}` },
-    { label: model?.name, href: `/catalog/${category?.id}/${brand?.id}/${model?.id}`,
+    {
+      label: model?.name,
+      href: `/catalog/${category?.id}/${brand?.id}/${model?.id}`,
     },
   ];
-
   const togglePart = (partId: string) => {
     setExpandedParts((prev) => {
       const newSet = new Set(prev);
@@ -59,6 +65,19 @@ export default function Parts() {
     });
   };
 
+  const toggleSubPart = (subPartId: string) => {
+    setExpandedSubParts((prev) => {
+      const next = new Set(prev);
+      next.has(subPartId) ? next.delete(subPartId) : next.add(subPartId);
+      return next;
+    });
+  };
+
+  const products = productDetails; // массив productDetail
+
+  const getProductsForSubPart = (subPartId: string) =>
+    products.filter((p) => p.subPartId === subPartId);
+
   const getSubPartsForPart = (partId: string) => {
     return subParts.filter((sp) => sp.partId === partId);
   };
@@ -70,7 +89,7 @@ export default function Parts() {
         <div className="container mx-auto px-4 py-6">
           <Link
             href={`/catalog/${categoryId}/${brandId}`}
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-4"
+            className="inline-flex items-center text-red-600 hover:text-red-700 mb-4"
           >
             <ArrowLeft className="w-4 h-4 mr-1" />
             Назад к моделям
@@ -113,7 +132,7 @@ export default function Parts() {
                     placeholder="Введите название узла или детали"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -130,7 +149,7 @@ export default function Parts() {
                     onClick={() => setActiveTab("catalog")}
                     className={`px-4 py-4 font-medium text-sm border-b-2 transition-colors ${
                       activeTab === "catalog"
-                        ? "border-blue-600 text-blue-600"
+                        ? "border-red-600 text-red-600"
                         : "border-transparent text-gray-500 hover:text-gray-700"
                     }`}
                   >
@@ -140,7 +159,7 @@ export default function Parts() {
                     onClick={() => setActiveTab("illustrations")}
                     className={`px-4 py-4 font-medium text-sm border-b-2 transition-colors ${
                       activeTab === "illustrations"
-                        ? "border-blue-600 text-blue-600"
+                        ? "border-red-600 text-red-600"
                         : "border-transparent text-gray-500 hover:text-gray-700"
                     }`}
                   >
@@ -187,9 +206,9 @@ export default function Parts() {
                                     }
                                   >
                                     {isExpanded ? (
-                                      <ChevronUp className="w-5 h-5 text-blue-600" />
+                                      <ChevronUp className="w-5 h-5 text-red-600" />
                                     ) : (
-                                      <ChevronDown className="w-5 h-5 text-blue-600" />
+                                      <ChevronDown className="w-5 h-5 text-red-600" />
                                     )}
                                   </button>
                                 ) : (
@@ -198,7 +217,7 @@ export default function Parts() {
 
                                 {/* Part name */}
                                 <div className="flex-1 py-3 pr-3">
-                                  <span className="text-blue-600 hover:text-blue-700 font-medium cursor-pointer">
+                                  <span className="text-red-600 hover:text-red-700 font-medium cursor-pointer">
                                     {part.name}
                                   </span>
                                 </div>
@@ -208,18 +227,60 @@ export default function Parts() {
                               {isExpanded && hasSubParts && (
                                 <div className="border-t border-gray-200 bg-gray-50">
                                   <div className="pl-14 pr-3 py-2">
-                                    {partSubParts.map((subPart: any) => (
-                                      <Link
-                                        key={subPart.id}
-                                        href={`/catalog/${categoryId}/${brandId}/${modelId}/${part.id}/${subPart.id}`}
-                                        className="flex items-start py-2 hover:bg-white rounded px-2 transition-colors group"
-                                      >
-                                        <ChevronRight className="w-4 h-4 text-gray-400 mt-0.5 mr-2 flex-shrink-0 group-hover:text-blue-600" />
-                                        <span className="text-gray-700 group-hover:text-blue-600 text-sm">
-                                          {subPart.name}
-                                        </span>
-                                      </Link>
-                                    ))}
+                                    {partSubParts.map((subPart: any) => {
+                                      const isSubExpanded =
+                                        expandedSubParts.has(subPart.id);
+                                      const subPartProducts =
+                                        getProductsForSubPart(subPart.id);
+                                      const hasProducts =
+                                        subPartProducts.length > 0;
+
+                                      return (
+                                        <div key={subPart.id} className="mb-1">
+                                          {/* SubPart header */}
+                                          <div className="flex items-center">
+                                            {hasProducts ? (
+                                              <button
+                                                onClick={() =>
+                                                  toggleSubPart(subPart.id)
+                                                }
+                                                className="p-1 hover:bg-white rounded"
+                                              >
+                                                {isSubExpanded ? (
+                                                  <ChevronDown className="w-4 h-4 text-red-600" />
+                                                ) : (
+                                                  <ChevronRight className="w-4 h-4 text-red-600" />
+                                                )}
+                                              </button>
+                                            ) : (
+                                              <div className="w-5" />
+                                            )}
+
+                                            <span className="text-gray-700 text-sm font-medium ml-1">
+                                              {subPart.name}
+                                            </span>
+                                          </div>
+
+                                          {/* Products list */}
+                                          {isSubExpanded && hasProducts && (
+                                            <div className="ml-6 mt-1 space-y-1">
+                                              {subPartProducts.map(
+                                                (product) => (
+                                                  <div
+                                                    key={product.id}
+                                                    className="flex items-center justify-between bg-white border rounded px-3 py-2 hover:shadow-sm transition"
+                                                  >
+                                                    <Link href={`/catalog/${categoryId}/${brandId}/${modelId}/${product.id}`} className="text-sm text-gray-800 font-medium">
+                                                      {product.name}
+                                                    </Link>
+                                                  </div>
+                                                )
+                                              )}
+                                            </div>
+                                          )}
+                                        </div>
+                                      );
+                                    })}
                                   </div>
                                 </div>
                               )}

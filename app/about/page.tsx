@@ -82,7 +82,7 @@ export default function About() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Быстрая доставка</h3>
                     <p className="text-gray-600 text-sm">
-                      Доставка по Москве в день заказа, по России - 1-3 дня
+                      Доставка по Киеву в день заказа, по Украине - 1-3 дня
                     </p>
                   </div>
                 </div>
