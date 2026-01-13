@@ -147,7 +147,7 @@ export default function Parts() {
                 <div className="flex px-6">
                   <button
                     onClick={() => setActiveTab("catalog")}
-                    className={`px-4 py-4 font-medium text-sm border-b-2 transition-colors ${
+                    className={`cursor-pointer px-4 py-4 font-medium text-sm border-b-2 transition-colors ${
                       activeTab === "catalog"
                         ? "border-red-600 text-red-600"
                         : "border-transparent text-gray-500 hover:text-gray-700"
@@ -157,7 +157,7 @@ export default function Parts() {
                   </button>
                   <button
                     onClick={() => setActiveTab("illustrations")}
-                    className={`px-4 py-4 font-medium text-sm border-b-2 transition-colors ${
+                    className={` cursor-pointer px-4 py-4 font-medium text-sm border-b-2 transition-colors ${
                       activeTab === "illustrations"
                         ? "border-red-600 text-red-600"
                         : "border-transparent text-gray-500 hover:text-gray-700"
@@ -200,7 +200,7 @@ export default function Parts() {
                                 {hasSubParts ? (
                                   <button
                                     onClick={() => togglePart(part.id)}
-                                    className="p-3 hover:bg-gray-50 transition-colors"
+                                    className="cursor-pointer p-3 hover:bg-gray-50 transition-colors"
                                     aria-label={
                                       isExpanded ? "Свернуть" : "Развернуть"
                                     }
@@ -244,7 +244,7 @@ export default function Parts() {
                                                 onClick={() =>
                                                   toggleSubPart(subPart.id)
                                                 }
-                                                className="p-1 hover:bg-white rounded"
+                                                className="cursor-pointer p-1 hover:bg-white rounded"
                                               >
                                                 {isSubExpanded ? (
                                                   <ChevronDown className="w-4 h-4 text-red-600" />

@@ -247,7 +247,7 @@ export default function About() {
 
                 <button
                   type="submit"
-                  className="w-full bg-red-600 text-white px-6 py-4 rounded-lg hover:bg-red-700 transition-colors font-medium flex items-center justify-center gap-2"
+                  className="cursor-pointer w-full bg-red-600 text-white px-6 py-4 rounded-lg hover:bg-red-700 transition-colors font-medium flex items-center justify-center gap-2"
                 >
                   <Send className="w-5 h-5" />
                   Отправить сообщение

@@ -52,7 +52,7 @@ export default function Cart() {
             <h1 className="text-3xl font-bold text-gray-900">Корзина</h1>
             <button
               onClick={clearCart}
-              className="text-red-600 hover:text-red-700 font-medium"
+              className="cursor-pointer text-red-600 hover:text-red-700 font-medium"
             >
               Очистить корзину
             </button>
@@ -99,7 +99,7 @@ export default function Cart() {
                       </div>
                       <button
                         onClick={() => removeFromCart(item.id)}
-                        className="text-red-600 hover:text-red-700 p-2"
+                        className="cursor-pointer text-red-600 hover:text-red-700 p-2"
                         title="Удалить из корзины"
                       >
                         <Trash2 className="w-5 h-5" />
@@ -113,7 +113,7 @@ export default function Cart() {
                         onClick={() =>
                           updateQuantity(item.id, item.quantity - 1)
                         }
-                        className="w-8 h-8 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                        className="cursor-pointer w-8 h-8 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
                       >
                         <Minus className="w-4 h-4" />
                       </button>
@@ -131,7 +131,7 @@ export default function Cart() {
                         onClick={() =>
                           updateQuantity(item.id, item.quantity + 1)
                         }
-                        className="w-8 h-8 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                        className="cursor-pointer w-8 h-8 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
                       >
                         <Plus className="w-4 h-4" />
                       </button>

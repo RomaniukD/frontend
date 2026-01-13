@@ -45,7 +45,7 @@ export default function ProductDetail() {
         <div className="container mx-auto px-4 py-4">
           <button
             onClick={() => window.history.back()}
-            className="inline-flex items-center text-red-600 hover:text-red-700"
+            className="cursor-pointer inline-flex items-center text-red-600 hover:text-red-700"
           >
             <ArrowLeft className="w-4 h-4 mr-1" />
             Назад

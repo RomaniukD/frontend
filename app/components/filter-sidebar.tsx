@@ -49,7 +49,7 @@ export function FilterSidebar({
       <div className="mb-6 pb-6 border-b border-gray-200">
         <button
           onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-          className="flex items-center justify-between w-full mb-4"
+          className="cursor-pointer flex items-center justify-between w-full mb-4"
         >
           <h3 className="font-semibold text-gray-900">Категории</h3>
           {isCategoryOpen ? (
@@ -82,7 +82,7 @@ export function FilterSidebar({
       <div className="mb-6 pb-6 border-b border-gray-200">
         <button
           onClick={() => setIsBrandOpen(!isBrandOpen)}
-          className="flex items-center justify-between w-full mb-4"
+          className="cursor-pointer flex items-center justify-between w-full mb-4"
         >
           <h3 className="font-semibold text-gray-900">Производитель</h3>
           {isBrandOpen ? (
@@ -113,7 +113,7 @@ export function FilterSidebar({
       <div>
         <button
           onClick={() => setIsPriceOpen(!isPriceOpen)}
-          className="flex items-center justify-between w-full mb-4"
+          className="cursor-pointer flex items-center justify-between w-full mb-4"
         >
           <h3 className="font-semibold text-gray-900">Цена</h3>
           {isPriceOpen ? (

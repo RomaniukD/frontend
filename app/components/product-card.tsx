@@ -59,7 +59,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <button
           onClick={() => isProductDetail && addToCart(product as ProductDetail)}
           disabled={!product.inStock}
-          className={`w-full mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-colors ${
+          className={`cursor-pointer w-full mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-colors ${
             product.inStock
               ? 'bg-red-600 text-white hover:bg-red-700'
               : 'bg-gray-200 text-gray-400 cursor-not-allowed'

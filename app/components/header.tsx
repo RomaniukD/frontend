@@ -3,11 +3,11 @@ import Link from 'next/link';
 import {usePathname } from 'next/navigation';
 import { Search, Menu, X, ShoppingCart, Phone } from 'lucide-react';
 import { useState } from 'react';
-
+import { useCart } from '../context/cart-context';
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathName = usePathname();
-
+  const { totalItems } = useCart();
   const navLinks = [
     { path: '/', label: 'Главная' },
     { path: '/catalog', label: 'Каталог' },
@@ -52,24 +52,26 @@ export function Header() {
                 placeholder="Поиск по артикулу или названию..."
                 className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
               />
-              <button className="absolute right-0 top-0 h-full px-4 bg-red-600 text-white rounded-r-lg hover:bg-red-700 transition-colors">
+              <button className="cursor-pointer absolute right-0 top-0 h-full px-4 bg-red-600 text-white rounded-r-lg hover:bg-red-700 transition-colors">
                 <Search className="w-5 h-5" />
               </button>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <button className="cursor-pointer relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
               <Link href="/cart">
               <ShoppingCart className="w-6 h-6 text-gray-700" />
-              <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                0
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
               </Link>
             </button>
 
             <button
-              className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="cursor-pointer lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -106,7 +108,7 @@ export function Header() {
               placeholder="Поиск..."
               className="w-full px-4 py-2 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
             />
-            <button className="absolute right-0 top-0 h-full px-4 bg-red-600 text-white rounded-r-lg">
+            <button className="cursor-pointer absolute right-0 top-0 h-full px-4 bg-red-600 text-white rounded-r-lg">
               <Search className="w-5 h-5" />
             </button>
           </div>

@@ -46,7 +46,7 @@ export default function ProductDetail() {
         <div className="container mx-auto px-4 py-4">
           <button
             onClick={() => window.history.back()}
-            className="inline-flex items-center text-red-600 hover:text-red-700"
+            className="cursor-pointer inline-flex items-center text-red-600 hover:text-red-700"
           >
             <ArrowLeft className="w-4 h-4 mr-1" />
             Назад
@@ -124,7 +124,7 @@ export default function ProductDetail() {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={decrementQuantity}
-                      className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                      className="cursor-pointer w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
                     >
                       <Minus className="w-4 h-4" />
                     </button>
@@ -139,7 +139,7 @@ export default function ProductDetail() {
                     />
                     <button
                       onClick={incrementQuantity}
-                      className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                      className="cursor-pointer w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
                     >
                       <Plus className="w-4 h-4" />
                     </button>
@@ -152,7 +152,7 @@ export default function ProductDetail() {
                 <button
                   onClick={handleAddToCart}
                   disabled={!product.inStock}
-                  className="flex-1 bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="cursor-pointer flex-1 bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   <ShoppingCart className="w-5 h-5" />
                   Добавить в корзину

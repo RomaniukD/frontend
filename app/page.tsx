@@ -127,7 +127,7 @@ export default function Home() {
                   <p className="text-gray-600 mb-4">
                     {item.excerpt}
                   </p>
-                  <button className="text-red-600 hover:text-red-700 font-medium inline-flex items-center gap-1">
+                  <button className="cursor-pointer text-red-600 hover:text-red-700 font-medium inline-flex items-center gap-1 cursor-pointer">
                     Подробнее
                     <ArrowRight className="w-4 h-4" />
                   </button>
