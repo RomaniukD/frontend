@@ -21,9 +21,9 @@ export default function About() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
       <section className="bg-gradient-to-r from-red-700 to-red-900 text-white py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">О компании</h1>
-          <p className="text-xl text-red-100 max-w-3xl">
+          <p className="text-xl text-red-100 max-w-3xl m-auto ">
             Наша компания — это новый онлайн-проект, созданный командой
             специалистов с практическим опытом работы в сфере автозапчастей
             более 30 лет. Мы хорошо понимаем рынок, номенклатуру и реальные
@@ -36,7 +36,7 @@ export default function About() {
       {/* About content */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          {/* <div className="grid grid-cols-1 gap-12 mb-16"> */}
             <div>
               {/* <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Основное направление нашей деятельности
@@ -87,12 +87,30 @@ export default function About() {
                 </p>
               </div>
             </div>
-
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 mt-16">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-red-600 mb-2">25+</div>
+              <div className="text-gray-600">лет на рынке</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-red-600 mb-2">50k+</div>
+              <div className="text-gray-600">наименований</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-red-600 mb-2">10k+</div>
+              <div className="text-gray-600">клиентов</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-red-600 mb-2">97%</div>
+              <div className="text-gray-600">доставка в срок</div>
+            </div>
+          </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
                 Наши преимущества
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-4 flex gap-8 justify-center">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
                     <span className="text-2xl font-bold text-red-600">1</span>
@@ -108,7 +126,7 @@ export default function About() {
                   </div>
                 </div>
 
-                <div className="flex gap-4">
+                {/* <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
                     <span className="text-2xl font-bold text-red-600">2</span>
                   </div>
@@ -120,7 +138,7 @@ export default function About() {
                       Все товары проходят контроль качества перед отгрузкой
                     </p>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
@@ -151,27 +169,8 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </div>
+          {/* </div> */}
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-red-600 mb-2">25+</div>
-              <div className="text-gray-600">лет на рынке</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-red-600 mb-2">50k+</div>
-              <div className="text-gray-600">наименований</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-red-600 mb-2">10k+</div>
-              <div className="text-gray-600">клиентов</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-red-600 mb-2">97%</div>
-              <div className="text-gray-600">доставка в срок</div>
-            </div>
-          </div>
         </div>
       </section>
 
