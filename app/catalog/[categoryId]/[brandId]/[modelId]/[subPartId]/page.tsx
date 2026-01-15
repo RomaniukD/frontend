@@ -70,12 +70,15 @@ export default function ProductDetail() {
           <section className="p-8 w-full">
             <table className="w-full ">
               <thead className="p-2">
-                <td>№</td>
-                <td>Инфо</td>
-                <td className="w-4/10">Название детали</td>
-                <td className="w-2/10">Заводской номер</td>
-                <td className="w-2/10">Количество на модель</td>
-                <td></td>
+                <tr>
+
+                <th>№</th>
+                <th>Инфо</th>
+                <th className="w-4/10">Название детали</th>
+                <th className="w-2/10">Заводской номер</th>
+                <th className="w-2/10">Количество на модель</th>
+                <th></th>
+                </tr>
               </thead>
               <tbody>
                 <tr>

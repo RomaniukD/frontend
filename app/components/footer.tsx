@@ -35,7 +35,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/about" className="text-sm hover:text-white transition-colors">
-                  О нас
+                  О компании
                 </Link>
               </li>
               <li>

@@ -11,7 +11,7 @@ export function Header() {
   const navLinks = [
     { path: '/', label: 'Главная' },
     { path: '/catalog', label: 'Каталог' },
-    { path: '/about', label: 'О нас' },
+    { path: '/about', label: 'О компании' },
   ];
 
   const isActive = (path: string) => pathName === path;
