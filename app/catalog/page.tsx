@@ -1,13 +1,15 @@
-import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
-import { vehicleCategories } from '../data/catalogData';
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+import { vehicleCategories } from "../data/catalogData";
 
 export default function Categories() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-200">
         <div className="container mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold text-gray-900">Каталог запчастей</h1>
+          <h1 className="text-3xl font-bold text-gray-900">
+            Каталог запчастей
+          </h1>
           <p className="text-gray-600 mt-2">Выберите категорию транспорта</p>
         </div>
       </div>
@@ -17,7 +19,10 @@ export default function Categories() {
           {vehicleCategories.map((category) => (
             <Link
               key={category.id}
-              href={`/catalog/${category.id}`}
+              href={{
+                pathname: `/catalog/${category.id}`,
+                query: { categoryName: category.name },
+              }}
               className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <div className="relative h-48 overflow-hidden">

@@ -57,47 +57,46 @@ export interface ProductDetail {
   description: string;
 }
 
-// 7 main vehicle categories
 export const vehicleCategories: VehicleCategory[] = [
   {
-    id: 'cars',
+    id: 'car',
     name: 'Легковые автомобили',
     image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop',
     description: 'Запчасти для легковых автомобилей всех марок'
   },
   {
-    id: 'trucks',
+    id: 'truck',
     name: 'Грузовики',
     image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=400&fit=crop',
     description: 'Запчасти для грузовых автомобилей'
   },
   {
-    id: 'motorcycles',
+    id: 'moto',
     name: 'Мотоциклы',
     image: 'https://images.unsplash.com/photo-1558981359-219d6364c9c8?w=600&h=400&fit=crop',
     description: 'Запчасти для мотоциклов и мотороллеров'
   },
   {
-    id: 'engines',
+    id: 'engine',
     name: 'Двигатели',
     image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&h=400&fit=crop',
     description: 'Двигатели и комплектующие'
   },
   {
-    id: 'buses',
+    id: 'bus',
     name: 'Автобусы',
     image: 'https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?w=600&h=400&fit=crop',
     description: 'Запчасти для автобусов и микроавтобусов'
   },
   {
-    id: 'agricultural',
+    id: 'special',
     name: 'Спецтехника',
     image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop',
     description: 'Запчасти для спецтехники и сельхозтехники'
   },
   {
-    id: 'trailers',
-    name: 'Прицепы',
+    id: 'tractor',
+    name: 'Трактора и комбайни',
     image: 'https://images.unsplash.com/photo-1586876607831-05566f64d6b6?w=600&h=400&fit=crop',
     description: 'Запчасти для прицепов и полуприцепов'
   }
